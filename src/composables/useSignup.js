@@ -12,7 +12,6 @@ let createAccount=async(email,password,displayName)=>{
      return res;
    }catch(err){
        error.value=err.message;
-       console.log(error.value);
    }
 }
 let useSignup=()=>{
