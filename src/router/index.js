@@ -6,7 +6,15 @@ const routes = [
   {
    path:"/",
    name:"Welcome",
-   component:Welcome
+   component:Welcome,
+   beforeEnter(to,from,next){
+    let user=auth.currentUser;
+    if(!user){
+      next();
+    }else{
+      next({name:"Chatroom"})
+    }
+  }
   },
   {
     path:"/chatroom",
